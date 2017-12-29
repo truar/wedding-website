@@ -1,0 +1,51 @@
+#profile {
+    background-image: url('./images/login.jpg');
+}
+
+#union {
+    background-image: url('./images/union.jpg');
+}
+
+#ceremonie {
+    background-image: url('./images/ceremonie.jpg');
+}
+
+#vin-honneur {
+    background-image: url('./images/vin_honneur.jpg');
+}
+
+#sport {
+    background-image: url('./images/sport.jpg');
+}
+
+#diner {
+    background-image: url('./images/diner.jpg');
+}
+
+#danse {
+    background-image: url('./images/danse.jpg');
+}
+
+#brunch {
+    background-image: url('./images/brunch.jpg');
+}
+
+#reponse {
+    background-image: url('./images/invitation.jpg');
+}
+
+#hebergement {
+    background-image: url('./images/hebergement.jpg');
+}
+
+#photo {
+    background-image: url('./images/photo.jpg');
+}
+
+#contact {
+    background-image: url('./images/contact.jpg');
+}
+
+#contact .content p, #contact ul li, #sjc .content p, #sjc ul li{
+    font-size: 1.3em;
+}

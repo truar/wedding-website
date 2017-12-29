@@ -1,0 +1,31 @@
+body section {
+    font-size: calc(16px + 0.5vw);
+}
+
+body section h1 {
+    font-size: 3em;
+}
+
+body .content p {
+    font-size: 1.5em;
+}
+
+body .content h2 {
+    font-size: 1.9em;
+}
+
+body #hebergement article h2 {
+    font-size: 1.5em;
+}
+
+body #hebergement article p {
+    font-size: 1.1em;
+}
+
+body #contact .content p, body #contact ul li, body #sjc .content p, body #sjc ul li {
+    font-size: 1.1em;
+}
+
+body #reponse article input[type="button"] {
+    font-size: 1.1em;
+}

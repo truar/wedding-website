@@ -1,0 +1,251 @@
+section {
+    height: 100vh;
+}
+nav {
+    position: fixed;
+    height: 75px;
+    top: 0;
+    width: 100%;
+    left: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+nav span.img_nav {
+    display: none;
+}
+
+nav ul {
+    margin-top: -13px;
+}
+
+h1 {
+    display: none;
+}
+
+body .content p {
+    font-size: 1.1em;
+}
+
+#profile article {
+    margin-top: 46%;
+    width: 90%;
+}
+
+#profile button[type="button"] {
+    width: 85%;
+    border-radius: none;
+}
+
+
+.wrapper-content {
+    margin-left: 0;
+}
+
+#profile .content p {
+    line-height: 2em;
+}
+
+.content p, #contact .content p, #sjc .content p {
+    line-height: 1.4em;
+}
+
+#le-jour-j article .content {
+    width: 90%;
+    margin-top: 30%;
+}
+
+#union h2 img {
+    display: block;
+    margin: auto;
+    width: 40%;
+}
+
+#le-jour-j #union .content h2 {
+    margin-bottom: 10%;
+}
+
+div.slider-nav {
+    bottom: 1%;
+}
+
+#reponse .ui-radio {
+    display: inline-block;
+    width: auto;
+    margin: auto;
+    margin-right: 10%;
+}
+
+#reponse article .content {
+    width: 90%;
+    height: auto;
+}
+
+#reponse article .content p {
+    text-align: center;
+}
+
+#reponse form {
+    overflow: visible;
+    height: auto;
+    margin-top: 25%;
+}
+
+div.photo {
+    clear: both;
+}
+
+#reponse #secondPart .inputName, #reponse #secondPart .tableName {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin: auto;
+}
+
+
+#reponse #secondPart .tableName {
+    height: 30vh;
+}
+
+#reponse #secondPart .tableName p {
+    text-align: left;
+    margin-left: 1%;
+}
+
+#reponse article button[type="button"] {
+    width: 45%;
+    font-size: 1.1em;
+}
+
+#reponse article button[name="addName"] {
+    font-size: 1em;
+}
+
+#reponse #secondPart .btn {
+    margin-top: 1%;
+}
+
+#hebergement #chalet {
+    margin-top: 28%;
+}
+
+#hebergement article {
+    width: 90%;
+    height: 23%;
+    margin: auto;
+    margin-top: 5%;
+    padding-top: 2%;
+}
+
+body #hebergement article h2 {
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#hebergement article .content p.left,  #hebergement article .content p.right {
+    float: none;
+    text-align: left;
+    margin: 0px;
+    font-size: 1em;
+}
+
+#sjc .content.left {
+    width: 90%;
+    margin: auto;
+    margin-top: 25%;
+    padding: 2%;
+}
+
+#sjc .content.left p:first-child {
+    margin-top: 0;
+}
+
+#sjc #map {
+    margin-top: 2%;
+    height: 37vh;
+    width: 94%;
+}
+
+#sjc .content {
+    width: 90%;
+    float: none;
+    margin: auto;
+}
+
+#sjc ul li.address {
+    margin-left: 5%;
+}
+
+#contact article#coordonnees {
+    margin-left: 30%;
+    margin-top: 25%;
+    width: 75%;
+    font-size: 0.8em;
+}
+
+body #sjc .content p, body #sjc ul li {
+    font-size: 1em;
+}
+
+#profile {
+    background-image: url('./images/login.jpg');
+}
+
+#union {
+    background-image: url('./images/union.jpg');
+}
+
+#ceremonie {
+    background-image: none;
+}
+
+#vin-honneur {
+    background-image: none;
+}
+
+#sport {
+    background-image: none;
+}
+
+#diner {
+    background-image: none;
+}
+
+#danse {
+    background-image: none;
+}
+
+#brunch {
+    background-image: none;
+}
+
+#reponse {
+    background-image: url('./images/invitation.jpg');
+}
+
+#hebergement {
+    background-image: url('./images/hebergement.jpg');
+    background-size: auto;
+}
+
+#photo {
+    background-image: none;
+}
+
+#sjc {
+     background-size: auto;
+     background-image: none;
+}
+
+#contact {
+    background-image: url('./images/contact.jpg');
+    background-size: auto;
+}
+
+body #reponse .content p {
+    font-size: 1.1em;
+}
+
+body article .yesOrNo {
+    width: 100%;
+}

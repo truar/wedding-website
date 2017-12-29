@@ -1,0 +1,663 @@
+@font-face {
+    font-family: AvenirBook;
+    src: url('./font-family/Avenir-Book/Avenir-Book-01.ttf');
+}
+
+@font-face {
+    font-family: SignPainter;
+    src: url('./font-family/SignPainter/SignPainter.otf');
+}
+
+nav {
+    position:fixed;
+    left: -260px;
+    top: 0;
+    width:350px;
+    background-color:rgba(0,0,0,0.5);
+    height:100%;
+    z-index:100;
+    transition-property: left, background-color;
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    font-size: 16px;
+    text-align: right;
+    font-family: SignPainter;
+}
+
+nav:hover {
+   transition-property: left, background-color;
+   transition-duration: 0.4s;
+   transition-timing-function: ease-in;
+   transition-delay: 0s;
+   left: 0px;
+   background-color:rgba(0,0,0,0.7);
+}
+
+nav img {
+    width: 12%;
+    vertical-align: middle;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+nav a {
+    color: white;
+    font-size: 1.9em;
+    text-decoration: none;
+}
+
+nav ul li a:hover, nav ul li a.selected {
+    color: black;
+}
+
+
+nav a:visited{
+    color: white;
+}
+
+nav ul li {
+    margin-top: 13%;
+}
+
+nav span.img_nav {
+    width: 40px;
+    height: 55px;
+    vertical-align: middle;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: inline-block;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#user_img {
+    background-image: url('./images/icons/user.png');
+    background-position: center top;
+}
+
+.selected #user_img, nav ul li a:hover #user_img {
+    background-image: url('./images/icons/user_select.png');
+}
+
+#jourj_img {
+    background-image: url('./images/icons/jourj.png');
+}
+
+.selected #jourj_img, nav ul li a:hover #jourj_img {
+    background-image: url('./images/icons/jourj_select.png');
+}
+
+#invitation_img {
+    background-image: url('./images/icons/invitation.png');
+}
+
+.selected #invitation_img, nav ul li a:hover #invitation_img {
+    background-image: url('./images/icons/invitation_select.png');
+}
+
+#hebergement_img {
+    background-image: url('./images/icons/hebergement.png');
+}
+
+.selected #hebergement_img, nav ul li a:hover #hebergement_img {
+    background-image: url('./images/icons/hebergement_select.png');
+}
+
+#photo_img {
+    background-image: url('./images/icons/photo.png');
+}
+
+.selected #photo_img, nav ul li a:hover #photo_img {
+    background-image: url('./images/icons/photo_select.png');
+}
+
+#SJC_img {
+    background-image: url('./images/icons/SJC.png');
+}
+
+.selected #SJC_img, nav ul li a:hover #SJC_img {
+    background-image: url('./images/icons/SJC_select.png');
+}
+
+#phone_img {
+    background-image: url('./images/icons/phone.png');
+    background-position: center top;
+    height: 70px;
+}
+
+.selected #phone_img, nav ul li a:hover #phone_img {
+    background-image: url('./images/icons/phone_select.png');
+}
+
+section {
+    /* A modifier dynamiquement en js pour fitter toute la page*/
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    font-size: 16px;
+    font-family: AvenirBook;
+    overflow: hidden;
+    background-position: center center;
+}
+
+section .slider {
+    width: 800%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+section .slider-nav {
+    position: absolute;
+    bottom: 5%;
+    z-index: 99;
+    width: 100%;
+    height: 5%;
+    text-align: center;
+}
+
+section .slider-nav .bubble {
+    width: 20px;
+    height: 20px;
+    background-image: url('./images/icons/bubble.png');
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-size: 100%;
+    vertical-align: middle;
+}
+
+section .slider-nav .bubble-selected, section .slider-nav .bubble:hover {
+    background-image: url('./images/icons/bubble-selected.png');
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+section h1 {
+    position: relative;
+    margin: auto;
+    padding-top: 2%;
+    font-size: 3.9em;
+    width: auto;
+    text-align: center;
+    z-index:99;
+    font-family: SignPainter;
+    color: black;
+}
+
+#profile {
+    background-image: url('./images/login.jpg');
+}
+
+#profile article h2 {
+    margin-bottom: 3%;
+}
+
+#profile article {
+    margin: auto;
+    margin-top: 15%;
+    width: 50%;
+    background-color: rgba(255,225,255,0.5);
+}
+
+#profile article .content {
+    padding: 2%;
+}
+
+#profile input, #profile button {
+    width: 80%;
+    font-size: 1em;
+    border: 1px solid black;
+    padding: 5px;
+    color: black;
+}
+
+#profile button[type="button"] {
+    background-color: black;
+    color: white;
+    width: 50%;
+}
+
+#profile #logged {
+    display: none;
+}
+
+
+#le-jour-j article {
+    float: left;
+    width: 100%;
+    height: 100%;
+    color: black;
+    background-position: center center;
+}
+
+.wrapper-content {
+    width: 1350px;
+    margin-left: 90px;
+}
+
+#le-jour-j article, #reponse article {
+    width: 100vh;
+}
+
+#le-jour-j article .content {
+    position: relative;
+    margin: auto;
+    margin-top: 13%;
+    width: 58%;
+    height: 50%;
+    padding: 1%;
+    background-color: rgba(127,127,127,0.4);
+    border: 1px solid black;
+}
+
+#union {
+    background-image: url('./images/union.jpg');
+}
+
+#le-jour-j #union .content {
+    background-color: rgba(212,207,200, 0.4);
+}
+
+#le-jour-j #union .content h2 {
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+#union h2 img {
+    vertical-align: middle;
+    width: 25%;
+    margin-right: 16%;
+    margin-left: -16%;
+}
+
+#ceremonie {
+    background-image: url('./images/ceremonie.jpg');
+}
+
+#le-jour-j #ceremonie .content {
+    background-color: rgba(255,255,255, 0.4);
+}
+
+#vin-honneur {
+    background-image: url('./images/vin_honneur.jpg');
+}
+
+#le-jour-j #vin-honneur .content {
+    background-color: rgba(141,125,100, 0.4);
+}
+
+#sport {
+    background-image: url('./images/sport.jpg');
+}
+
+#le-jour-j #sport .content {
+    background-color: rgba(235,230,225, 0.4);
+}
+
+#diner {
+    background-image: url('./images/diner.jpg');
+}
+
+#le-jour-j #diner .content {
+    background-color: rgba(255,255,255, 0.4);
+}
+
+#danse {
+    background-image: url('./images/danse.jpg');
+}
+
+#le-jour-j #danse .content {
+    background-color: rgba(255,255,255, 0.4);
+}
+
+#brunch {
+    background-image: url('./images/brunch.jpg');
+}
+
+#le-jour-j #brunch .content {
+    background-color: rgba(250,244,244, 0.4);
+}
+
+.content p {
+    font-size: 1.9em;
+    text-align: center;
+    line-height: 2em;
+}
+.content h2 {
+    font-size: 2.7em;
+    text-align: center;
+    margin-bottom: 7%;
+    margin-top: 5%;
+}
+
+#reponse {
+    background-image: url('./images/invitation.jpg');
+    background-position: center center;
+    color: white;
+}
+
+#reponse h1 {
+    color: white;
+}
+
+#reponse form {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 80%;
+    margin-top: 3%;
+    overflow:hidden;
+}
+
+#reponse form .slider-form {
+    width: 400%;
+    position: absolute;
+}
+
+#reponse form article {
+    float: left;
+    margin: auto;
+    width: 1440px;
+}
+
+#reponse article .content {
+    position: relative;
+    width: 70%;
+    margin: auto;
+    height: 540px;
+}
+
+#reponse article .content p {
+    text-align: left;
+}
+
+#reponse div.yesOrNo {
+    margin-bottom: 10%;
+    display: table;
+}
+
+#reponse div.yesOrNo input, #reponse div.yesOrNo input {
+    vertical-align: middle;
+}
+
+#reponse input[type="email"], #reponse input[type="text"] {
+    width: 100%;
+    border: 0px;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    font-size: 1em;
+    color: white;
+}
+
+#reponse .photo {
+    margin-bottom: 5%;
+}
+
+#reponse article#firstPart .beforeBtn {
+    border-top: 1px solid black;
+    margin-top: 5px;
+    width: 100%;
+}
+
+#reponse article .btn {
+    width: auto;
+    text-align: center; 
+}
+
+#reponse article button[type="button"], #reponse article input[type="button"] {
+    border: 1px solid black;
+    background-color: rgba(0,0,0,0.5); 
+    color: white;
+    width: 190px;
+    font-size: 1.3em;
+    padding-top: 10px;
+    padding-bottom: 10px;  
+}
+
+#reponse article button[name="addName"] {
+    font-size: 0.85em;
+}
+
+#reponse article button[type="button"]:hover {
+    background-color: rgba(0,0,0,0.7); 
+}
+
+#reponse #secondPart .inputName, #reponse #secondPart .tableName {
+    float: left;
+    width: 40%;
+    margin-bottom: 5%;
+}
+
+#reponse #secondPart .inputName input[type="button"] {
+    font-size: 0.8em;
+}
+
+#reponse #secondPart .inputName p {
+    margin-bottom: 5%;
+}
+
+#reponse #secondPart .inputName p.add {
+    text-align: center;
+}
+
+#reponse #secondPart .tableName {
+    border: 1px solid black;
+    margin-left: 10%;
+    padding: 1%;
+    font-size: 0.7em;
+    height: 370px;
+}
+
+#reponse #secondPart .tableName span {
+    display: inline-block;
+}
+
+#reponse #secondPart .tableName span.name {
+    width: 80%;
+}
+
+#reponse #secondPart .delete {
+    background-image: url('./images/corbeille_fermee.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 27px;
+}
+
+#reponse #secondPart .delete:hover {
+    background-image: url('./images/corbeille_ouverte.png');
+}
+
+#reponse #secondPart .btn {
+    clear: both;
+    margin: auto;
+}
+
+#reponse #lastPart .content p {
+    line-height: 1.5em;
+}
+
+#reponse #lastPart textarea {
+    padding: 0.5%;
+    border: 1px solid black;
+    background-color: rgba(0,0,0,0.1);
+    width: 100%;
+    height: 100px;
+    color: white;
+}
+
+#reponse #lastPart textarea#allergies {
+    margin-bottom: 5%;
+}
+
+#reponse #answer p {
+    margin-top: 15%;
+}
+
+#hebergement {
+    background-image: url('./images/hebergement.jpg');
+    background-size: 100%;
+    color: white;
+}
+
+#hebergement h1 {
+    color: white;
+}
+
+#hebergement article {
+    width: 80%;
+    margin: auto;
+    height: 18%;
+    margin-left: 12%;
+    margin-bottom: 2%;
+    background-color: rgba(37,71,110, 0.4);
+    border: 1px solid white;
+    padding: 1%;
+    padding-left: 2%;
+}
+
+#hebergement #chalet {
+    margin-top: 5%;
+}
+
+#hebergement article h2 {
+    font-size: 1.9em;
+    font-style: italic;
+}
+
+#hebergement article p {
+    font-size: 1.6em;
+}
+
+#hebergement article .content {
+    clear: both;
+    margin-top: 1%;
+}
+
+#hebergement article .content p.left {
+    float: left;
+    margin-left: 5%;
+}
+
+#hebergement article .content p.right {
+    float: right;
+    margin-right: 1%;
+}
+
+#photo {
+    background-image: url('./images/photo.jpg');
+}
+
+#sjc {
+    background-image: url('./images/sjc.jpg');
+    background-size: 100% 100%;
+}
+
+#sjc .content.left {
+    background-color: rgba(0,0,0,0.6);
+    border: 1px solid black;
+    padding: 1%;
+    width: 35%;
+    margin-left: 7%;
+}
+
+#sjc .content-wrapper {
+    display: table;
+}
+
+#sjc .content {
+    width: 47%;
+    margin-left: 2%;
+    float: left;
+    margin-top: 10%;
+}
+
+#sjc #map {
+    height: 49.5vh;
+}
+
+#sjc h1, #sjc p, #sjc ul li{
+    color: white;
+}
+
+
+#contact {
+    background-image: url('./images/contact.jpg');
+    background-size: 100% 100%;
+}
+
+#contact article#coordonnees {
+    width: 35%;
+    margin-left: 45%;
+    margin-top: 3.5%;
+    padding: 1% 2%;
+    transform: rotate(-0.8deg);
+}
+
+#contact .content p, #sjc .content p {
+    text-align: left;
+    line-height: 1.5em;
+    margin-top: 4%;
+    font-size: 250%;
+}
+
+#contact .content p span, #sjc .content-wrapper .content p {
+    font-family: calibri;
+}
+
+#contact ul li, #sjc ul li {
+    font-size: 250%;
+    margin-top: 0.2%;
+    line-height: 1.5em;
+}
+
+#contact ul li.mail {
+    background-image: url('./images/icons/coordonnees_mail.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 5.5% 45.5%;
+    padding-left: 7%;
+}
+
+#contact ul li.phone {
+    background-image: url('./images/icons/coordonnees_phone.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 4% 100%;
+    padding-left: 6%;
+    margin-left: 0.75%;
+}
+
+#contact ul li.address {
+    margin-left: 3%;
+}
+
+#sjc ul li.address {
+     margin-left: 8%;
+ }
+/* To be tested : viewheight port */
+/*
+#le-jour-j article, #reponse article {
+    width: 179.78vh;
+    height: 100vh;
+}
+*/
+/* Comment to debug */
+/*
+nav {
+    left: -350px;
+}
+
+section {
+    display: none;
+}
+
+#profile {
+    display: block;
+}

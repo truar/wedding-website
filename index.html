@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Anouk & Thibault wedding !</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive-test.css" />
+  <link rel="stylesheet" media="(min-width:800px) and (max-width:1440px)" href="css/1440x900/style-1440x900.css" />
+  <link rel="stylesheet" media="(max-width:600px)" href="css/mobile/mobile.css" />
+  <!--<script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>-->
+  
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  
+  <script src="js/customObject.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/trigger.js"></script>
+  <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#profile">Profil<span id="user_img" class="img_nav" /></a></li>
+            <li><a href="#le-jour-j">Le jour J<span id="jourj_img" class="img_nav" /></a></li>
+            <li><a href="#reponse">R&eacute;pondre &agrave; l'invitation<span id="invitation_img" class="img_nav" /></a></li>
+            <li><a href="#hebergement">H&eacute;bergement<span id="hebergement_img" class="img_nav" /></a></li>
+            <li><a href="#photo">Photos<span id="photo_img" class="img_nav" /></a></li>
+            <li><a href="#sjc">Saint-Jean de Ch&eacute;py<span id="SJC_img" class="img_nav" /></a></li>
+            <li><a href="#contact">Coordonn&eacute;es<span id="phone_img" class="img_nav" /></a></li>
+        </ul>
+    </nav>
+    <section id="profile">
+        <article id="login">
+            <div class="content" id="login-wrapper">
+                <h2>Les poupous se marient !</h2>
+                <form name="login" id="login-form" method="POST">
+                    <p><input type="text" name="username" id="username" placeholder="Login" /></p>
+                    <p><input type="password" name="password" id="password" placeholder="Mot de passe" /></p>
+                    <p><button type="button" name="log" id="log">Se connecter</button></p>
+                </form>
+            </div>
+            <div id="logged" class="content">
+                <h2>Que l'aventure commence !</h2>
+                <p>Bienvenue</p>
+                <p>Laurence & Robert RUARO</p>
+                <p>J-350</p>
+            </div>
+        </article>
+    </section>
+    <section id="le-jour-j">
+        <h1>Le jour J</h1>
+        <div class="slider">
+            <article id="union">
+                <div class="wrapper-content">
+                    <div class="content">
+                        <h2><img src="./css/images/union-profile.png" />Anouk & Thibault</h2>
+                        <p>S’unissent pour le meilleur et pour le pire<br/>le 31 Août 2019<br/>au domaine de Saint-Jean de Chépy</p>
+                    </div>
+                </div>
+            </article>
+            <article id="ceremonie">
+                <div class="wrapper-content">
+                    <div class="content">
+                        <h2>C&eacute;r&eacute;monie</h2>
+                        <p>Nous vous donnons rendez-vous à 10h45<br/>au domaine de Saint-Jean de Chépy<br/>La cérémonie débutera à 11h00 sous le chapiteau</p>
+                    </div>
+                </div>
+            </article>
+            <article id="vin-honneur">
+                <div class="wrapper-content">
+                    <div class="content">
+                        <h2>Le vin d'honneur</h2>
+                        <p>Se déroulera de 13h00 à 15h00<br/>Une activité « guest book » aura lieu dans l’après-midi<br/>Nous aimerions que chaque invité, couple, famille<br/>apporte une photo qui lui est chère</p>
+                    </div>
+                </div>
+            </article>
+            <article id="sport">
+                <div class="wrapper-content">
+                    <div class="content">
+                        <h2>Activit&eacute;s sportives</h2>
+                        <p>De 15h00 à 18h00<br/>N’oubliez pas de prévoir une tenue adéquate<br/>(Vestiaire et douche sur place)</p>
+                    </div>
+                </div>
+            </article>
+            <article id="diner">
+                <div class="wrapper-content">
+                    <div class="content">
+                        <h2>Repas</h2>
+                        <p>Vous pourrez vous installer dans la salle<br/>principale à partir de 19h00<br/>Nous vous proposons de déguster un <br/>repas 100% végétarien</p>
+                    </div>
+                </div>
+            </article>
+            <article id="danse">
+                <div class="wrapper-content">
+                    <div class="content">
+                        <h2>Soir&eacute;e</h2>
+                        <p>C’est le moment d’enflammer la piste de danse !<br/>Les festivités s’arrêteront vers 4h00</p>
+                    </div>
+                </div>
+            </article>
+            <article id="brunch">
+                <div class="wrapper-content">
+                    <div class="content">
+                        <h2>Brunch</h2>
+                        <p>Dimanche 1 Septembre à partir de 11h00<br/>La journée sera placée sous le thème de la détente<br/>N’oubliez pas vos maillots de bain</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="slider-nav">
+            <span class="bubble bubble-selected"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+        </div>
+    </section>
+    <section id="reponse">
+        <h1>R&eacute;pondre &agrave; l'invitation</h1>
+        <form id="reponse-form" method="POST" name="reponse">
+            <div class="slider-form">
+                <article id="firstPart">
+                    <div class="content">
+                        <div class="yesOrNo">
+                            <p>Serez-vous disponible le jour J ?</p>
+                            <p class="yesOrNo"><label for="yesanswer">Oui</label> <input name="yesOrNo" id="yesanswer" type="radio" value="yes" checked/> <label for="no">Non</label> <input name="yesOrNo" id="no" type="radio" value="no" /></p>
+                        </div>
+                        <div class="photo">
+                            <p>Les photos seront mises à disposition sur le site après le mariage<br/>Si vous souhaitez être averti, merci d’indiquer votre adresse</p>
+                            <p><input type="email" name="email" id="email" placeholder="E-mail" /></p>   
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button type="button" name="continue" class="next">Continuer</button>    
+                    </div>
+                </article>
+                <article id="secondPart">
+                     <div class="content">
+                        <div class="inputName">
+                            <p>Invit&eacute;s pr&eacute;sents :</p>
+                            <p><input type="text" name="lastname" id="lastname" placeholder="Nom*" /></p>
+                            <p><input type="text" name="firstname" id="firstname" placeholder="Pr&eacute;nom*" /></p>
+                            <p class="add"><button type="button"name="addName">Ajouter</button></p>
+                        </div>
+                        <div class="tableName">
+                        </div>
+                     </div>
+                     <div class="btn">
+                        <button type="button" name="previousSecond" class="previous">Pr&eacute;c&eacute;dent</button>
+                        <button type="button" name="next" class="next">Suivant</button>  
+                     </div>
+                </article>   
+                <article id="lastPart">
+                     <div class="content">
+                        <p>Si vous suivez un r&eacute;gime alimentaire particulier ou si vous avez des intol&eacute;rances/allergies, merci de nous le pr&eacute;ciser ci-dessous :</p>
+                        <p><textarea id="allergies" name="allergies" placeholder="Texte..."></textarea></p>
+                        <p>Si vous souhaitez nous faire parvenir un message, c’est ici :</p>
+                        <p><textarea id="comments" name="comments" placeholder="Texte..." ></textarea></p>
+                     </div>
+                     <div class="btn">
+                         <button type="button" name="previousLast" class="previous">Pr&eacute;c&eacute;dent</button>
+                         <button type="button" name="send" class="next">Envoyer</button>
+                </article>
+                <article id="answer">
+                    <div class="content">
+                        <p>Merci d’avoir répondu à l’invitation.<br/>En cas de changements ou de problèmes, n’hésitez pas à nous contacter<br/>Rendez-vous le 31 Août...</p>
+                </article>
+            </div>
+        </form>
+    </section>
+    <section id="hebergement">
+        <h1>H&eacute;b&eacute;rgement</h1>
+        <article id="chalet">
+            <h2>Chalets</h2>
+            <div class="content">
+                <p class="left">Sur place</p>
+                <p class="right">Prix pour la nuit : 35&euro;/pers.</p>
+            </div>
+            <div class="content">
+                <p class="left">Places limitées</p>
+                <p class="right">Capacité : 7 personnes</p>
+            </div>
+        </article>
+        <article id="tentes">
+            <h2>Tentes*</h2>
+            <div class="content">
+                <p class="left">Sur place</p>
+                <p class="right">Prix pour la nuit : gratuit</p>
+            </div>
+            <div class="content">
+                <p class="left">Places limitées</p>
+                <p class="right">*mat&eacute;riel non fourni pas les mari&eacute;s</p>
+            </div>
+        </article>
+        <article id="gites">
+            <h2>Gites</h2>
+            <div class="content">
+                <p class="left">Aux alentours</p>
+                <p class="right">Prix pour la nuit : 35&euro;/pers.*</p>
+            </div>
+            <div class="content">
+                <p class="left">&Agrave; r&eacute;server</p>
+                <p class="right">*prix moyen</p>
+            </div>
+        </article>
+    </section>
+    <section id="photo">
+    </section>
+    <section id="sjc">
+        <article>
+            <h1>Saint-Jean de Ch&eacute;py</h1>
+            <div class="wrapper-content">
+                <div class="content left">
+                    <p>Adresse :</p>
+                        <ul>
+                            <li class="address">Château de St-Jean de Chépy</li>
+                            <li class="address">11 Chemin du Domaine</li>
+                            <li class="address">38210 Tullins</li>
+                        </ul>
+                    
+                    <p>A proximit&eacute; :</p>
+                        <ul>
+                            <li class="address">Gare TGV -> Grenoble</li>
+                            <li class="address">A&eacute;roport -> Lyon-Saint-Ex</li>
+                            <li class="address">Autoroutes -> A48 et A49</li>
+                        </ul>
+                    
+                </div>
+                <div id="map" class="content right">
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="contact">
+        <article id="coordonnees" class="content">
+            <h1>Coordonn&eacute;es</h1>
+            <p><span>Anouk POITEVIN :</span>
+                <ul>
+                    <li class="mail">anouk.poitevin@gmail.com</li>
+                    <li class="phone">06.85.28.45.72</li>
+                </ul>
+            </p>
+            <p><span>Thibault RUARO :</span>
+                <ul>
+                    <li class="mail">thibault.ruaro@gmail.com</li>
+                    <li class="phone">06.25.56.27.53</li>
+                </ul>
+            </p>
+            <p><span>Adresse :</span>
+                <ul>
+                    <li class="address">10 route du Bouchet<br/>74150 Rumilly</li>
+                </ul>
+            </p>
+        </article>
+    </section>
+    <script>
+        function initMap() {
+            var sjc = {lat: 45.304472, lng: 5.510262};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: sjc
+            });
+            var marker = new google.maps.Marker({
+                position: sjc,
+                map: map
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCwCq5yb7k6dnC9wC5O1v5ePAaHPds2D8&callback=initMap"></script>
+</body>
+</html>
