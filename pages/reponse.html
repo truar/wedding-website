@@ -1,0 +1,51 @@
+    <h1>R&eacute;pondre &agrave; l'invitation</h1>
+    <form id="reponse-form" method="POST" name="reponse">
+        <div class="slider-form">
+            <article id="firstPart">
+                <div class="content">
+                    <div class="yesOrNo">
+                        <p>Serez-vous disponible le jour J ?</p>
+                        <p class="yesOrNo"><label for="yesanswer">Oui</label> <input name="yesOrNo" id="yesanswer" type="radio" value="yes" checked/> <label for="no">Non</label> <input name="yesOrNo" id="no" type="radio" value="no" /></p>
+                    </div>
+                    <div class="photo">
+                        <p>Les photos seront mises à disposition sur le site après le mariage<br/>Si vous souhaitez être averti, merci d’indiquer votre adresse</p>
+                        <p><input type="email" name="email" id="email" placeholder="E-mail" /></p>   
+                    </div>
+                </div>
+                <div class="btn">
+                    <button type="button" name="continue" class="next">Continuer</button>    
+                </div>
+            </article>
+            <article id="secondPart">
+                <div class="content">
+                    <div class="inputName">
+                        <p>Invit&eacute;s pr&eacute;sents :</p>
+                        <p><input type="text" name="lastname" id="lastname" placeholder="Nom*" /></p>
+                        <p><input type="text" name="firstname" id="firstname" placeholder="Pr&eacute;nom*" /></p>
+                        <p class="add"><button type="button"name="addName">Ajouter</button></p>
+                    </div>
+                    <div class="tableName">
+                    </div>
+                </div>
+                <div class="btn">
+                    <button type="button" name="previousSecond" class="previous">Pr&eacute;c&eacute;dent</button>
+                    <button type="button" name="next" class="next">Suivant</button>  
+                </div>
+            </article>   
+            <article id="lastPart">
+                <div class="content">
+                    <p>Si vous suivez un r&eacute;gime alimentaire particulier ou si vous avez des intol&eacute;rances/allergies, merci de nous le pr&eacute;ciser ci-dessous :</p>
+                    <p><textarea id="allergies" name="allergies" placeholder="Texte..."></textarea></p>
+                    <p>Si vous souhaitez nous faire parvenir un message, c’est ici :</p>
+                    <p><textarea id="comments" name="comments" placeholder="Texte..." ></textarea></p>
+                </div>
+                <div class="btn">
+                    <button type="button" name="previousLast" class="previous">Pr&eacute;c&eacute;dent</button>
+                    <button type="button" name="send" class="next">Envoyer</button>
+            </article>
+            <article id="answer">
+                <div class="content">
+                    <p>Merci d’avoir répondu à l’invitation.<br/>En cas de changements ou de problèmes, n’hésitez pas à nous contacter<br/>Rendez-vous le 31 Août...</p>
+            </article>
+        </div>
+    </form>

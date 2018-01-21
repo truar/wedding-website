@@ -1,0 +1,38 @@
+        <article>
+        <h1>Saint-Jean de Ch&eacute;py</h1>
+        <div class="wrapper-content">
+            <div class="content left">
+                <p>Adresse :</p>
+                    <ul>
+                        <li class="address">Château de St-Jean de Chépy</li>
+                        <li class="address">11 Chemin du Domaine</li>
+                        <li class="address">38210 Tullins</li>
+                    </ul>
+                
+                <p>A proximit&eacute; :</p>
+                    <ul>
+                        <li class="address">Gare TGV -> Grenoble</li>
+                        <li class="address">A&eacute;roport -> Lyon-Saint-Ex</li>
+                        <li class="address">Autoroutes -> A48 et A49</li>
+                    </ul>
+                
+            </div>
+            <div id="map" class="content right">
+            </div>
+        </div>
+    </article>
+
+    <script>
+        function initMap() {
+            var sjc = {lat: 45.304472, lng: 5.510262};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: sjc
+            });
+            var marker = new google.maps.Marker({
+                position: sjc,
+                map: map
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCwCq5yb7k6dnC9wC5O1v5ePAaHPds2D8&callback=initMap"></script>

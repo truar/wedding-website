@@ -17,14 +17,6 @@ class Slider {
     }
 }
 
-class Website {
-    constructor(numberSection, currentSection, screen) {
-        this.numberSection = numberSection;
-        this.currentSection = currentSection;
-        this.screen = screen;
-    }
-}
-
 class Wedding {
     constructor(isPresent, email, names, allergies, comments) {
         this.isPresent = isPresent;

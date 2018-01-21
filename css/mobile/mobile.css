@@ -5,10 +5,47 @@ nav {
     position: fixed;
     height: 75px;
     top: 0;
-    width: 100%;
     left: 0;
+    width: 100%;
     overflow: hidden;
     text-align: center;
+    transition: top 0.4s ease-in 0s, height 0.4s ease-in 0s;
+}
+
+nav {
+    top : -75px;
+}
+
+nav.ready {
+    top: 0px;
+    left: 0px;
+    transition: top 0.4s ease-in 0s, height 0.4s ease-in 0s;
+}
+
+nav .menu-selected-mobile {
+    display: block;
+    font-size: 1.9em;
+    text-decoration: none;
+    color: black;
+    margin-top: 6%;
+}
+
+
+nav.responsive {
+    transition: top 0.4s ease-in 0s, height 0.4s ease-in 0s;
+    height: 700px;
+}   
+
+nav.responsive ul {
+    display: block;
+}
+
+nav.responsive .menu-selected-mobile {
+    display: none;
+}
+
+nav input {
+    display: none;
 }
 
 nav span.img_nav {
@@ -16,8 +53,30 @@ nav span.img_nav {
 }
 
 nav ul {
-    margin-top: -13px;
+    display: none;
+    margin-top: -5%;
 }
+
+nav ul li {
+    margin-top: 11%;
+}
+
+nav a:not(:first-child) {
+    display: none;
+}
+
+nav a.icon {
+  float: right;
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+html body nav a.icon, html body nav a.icon:hover, html body nav a.icon:visited {
+    color: white;
+}
+
 
 h1 {
     display: none;
@@ -125,6 +184,10 @@ div.photo {
     margin-top: 1%;
 }
 
+#reponse #lastPart textarea {
+    height: 75px;
+}
+
 #hebergement #chalet {
     margin-top: 28%;
 }
@@ -196,6 +259,30 @@ body #sjc .content p, body #sjc ul li {
 }
 
 #ceremonie {
+    background-image: url('./images/ceremonie.jpg');
+}
+
+#vin-honneur {
+    background-image: url('./images/vin_honneur.jpg');
+}
+
+#sport {
+    background-image: url('./images/sport.jpg');
+}
+
+#diner {
+    background-image: url('./images/diner.jpg');
+}
+
+#danse {
+    background-image: url('./images/danse.jpg');
+}
+
+#brunch {
+    background-image: url('./images/brunch.jpg');
+}
+
+/*#ceremonie {
     background-image: none;
 }
 
@@ -217,7 +304,7 @@ body #sjc .content p, body #sjc ul li {
 
 #brunch {
     background-image: none;
-}
+}*/
 
 #reponse {
     background-image: url('./images/invitation.jpg');
@@ -229,12 +316,12 @@ body #sjc .content p, body #sjc ul li {
 }
 
 #photo {
-    background-image: none;
+    background-image: url('./images/photo.jpg');
 }
 
 #sjc {
-     background-size: auto;
-     background-image: none;
+    background-image: url('./images/SJC.jpg');
+    background-size: auto;
 }
 
 #contact {
