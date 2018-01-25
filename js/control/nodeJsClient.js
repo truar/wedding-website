@@ -5,17 +5,18 @@ class NodeJsClient {
 
     login(website, callbackSuccess, callbackFailure) {
         $.ajax({
-            method: "GET",
+            method: "POST",
             dataType: "json",
-            url: this.urlServer + "/login/" + website.guest.id
+            url: this.urlServer + "/login/" + website.guest.id,
+            data: { password : website.guest.password }
           })
             .done(function(data) {
                 website.guest = data.data;
                 // Init the guests table
                 callbackSuccess(website.guest);
             })
-            .fail(function(data) {
-                callbackFailure(data)
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                callbackFailure($.parseJSON(jqXHR.responseText));
             }); 
     }
 

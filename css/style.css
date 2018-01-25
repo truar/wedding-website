@@ -272,6 +272,10 @@ section h1 {
     display: none;
 }
 
+#profile .error-login {
+    color: red;
+    font-size: 1.2em;
+}
 
 #le-jour-j article {
     float: left;

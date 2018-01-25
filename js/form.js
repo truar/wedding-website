@@ -50,6 +50,7 @@ AnswerForm.prototype.logUser = function(website, login, password) {
     // Display the waiting GIF
     $('#login-wrapper').animate({opacity: 0}, 400, "swing", () => {
         $('#login-wrapper').css({display: 'none'});
+        $(".error-login").remove();
         $('#login').append("<div class='content' id='waiting'><p><img id='loader' src='./css/images/icons/loading.gif' /></p></div>");
         // As soon as we have the answer, we put the information
         this.nodeJsClient.login(website,
@@ -63,7 +64,16 @@ AnswerForm.prototype.logUser = function(website, login, password) {
                 });
             },
             function(data) {
-                console.log("Login FAILED : " + data.info);
+                // remove the GIF and display the form again, with a message for the user
+                console.log("Login FAILED : " + data.error);
+                $("#login-form").prepend("<p class='error-login'>" + data.error + "</p>");
+                $('#waiting').animate({opacity: 0}, 400, "swing", function() {
+                    $(this).css({display: 'none'});
+                    $('#login-wrapper').css({display: 'block'});
+                    $('#login-wrapper').animate({opacity: 1}, 400, "swing", () => {
+                        $('#waiting').remove();
+                    });
+                });
             }
         );
     });
