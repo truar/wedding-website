@@ -15,6 +15,22 @@ class Slider {
         this.leftOn = false;
         this.isEnabled = true;
     }
+
+    // Remove the article of the slider where the guest is not invited to.
+    render(guest) {
+        if(guest.category <= 2) {
+            $("article#brunch").remove();
+            this.count -= 1;
+        }
+        if(guest.category === 1) {
+            $("article#diner, article#danse").remove();
+            this.count -= 2;
+        }
+
+        // delete the bubble in excess
+        var toDelete = this.count - 1;
+        $(".bubble:gt(" + toDelete + ")").remove();
+    }
 }
 
 class Wedding {

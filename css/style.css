@@ -695,10 +695,10 @@ section h1 {
 }
 */
 /* Comment to debug */
-/*
+
 nav {
     left: -350px;
-}*/
+}
 
 /* Removing the ugly jquery mobile css effect */ 
 body .ui-page-theme-a a, html body .ui-bar-a a, html body .ui-body-a a, html body ,nav .ui-group-theme-a a {

@@ -1,3 +1,5 @@
+var website, slider;
+
 function toggleMenu() {
     $("nav").toggleClass("responsive");
 }
@@ -89,7 +91,7 @@ function initTrigger(screen, slider, website, answerForm) {
 
 $(document).ready(function() {
 
-    var screen, slider, website, wedding, nodeJsClient, guest, answerForm;
+    var screen, wedding, nodeJsClient, guest, answerForm;
 
     nodeJsClient = new NodeJsClient();
     guest = {};
@@ -116,10 +118,6 @@ $(document).ready(function() {
 
     // Init the trigger
     initTrigger(screen, slider, website, answerForm);
-    
-    // Determine the current section to activate or not the keyboard for the slider
-    
-    //enableSlider(website, slider);
     
     website.renderFirst("body div:first", () => determineCurrentSection(website, slider));
 
