@@ -11,20 +11,36 @@ AnswerForm.prototype.validateFirstPart = function(guest, isPresent, email) {
     $("div.slider-form").animate({left: "-=" + this.slider.screen.width}, 400);
 }
 
-AnswerForm.prototype.validateSecondPart = function() {
-    $("div.slider-form").animate({left: "-=" + this.slider.screen.width}, 400);
+AnswerForm.prototype.validateSecondPart = function(guest) {
+    if(guest.answer.guests.length === 0) {
+        this.displayErrorGuests('#secondPart .content', "Veuillez renseigner au moins un invit&eacute;");
+    } else {
+        $("div.slider-form").animate({left: "-=" + this.slider.screen.width}, 400);
+    }
 }
+
+AnswerForm.prototype.displayErrorGuests = function(selector, message) {
+    if($(selector + " .error-guests").length === 0) {
+        $(selector).append("<p class='error-guests'>" + message + "</p>");
+    }
+}
+
+AnswerForm.prototype.removeErrorGuests = function(selector) {
+    $(selector).remove();
+}
+
 
 AnswerForm.prototype.validateLastPart = function(guest, allergies, comments) {
     guest.answer.allergies = allergies;
     guest.answer.message = comments;
     
     console.log(JSON.stringify(guest));
+
     this.nodeJsClient.putGuest(guest, 
         () => {
             $("div.slider-form").animate({left: "-=" + this.slider.screen.width}, 400);
         }, () => {
-            alert("PUT Failed");
+            this.displayErrorGuests('#lastPart .content', "Something wrong happened. Please try again later or contact us");
         }
     );
     
@@ -32,6 +48,7 @@ AnswerForm.prototype.validateLastPart = function(guest, allergies, comments) {
 
 AnswerForm.prototype.addName = function(guest, lastName, firstName) {
     guest.answer.guests.push(lastName + " " + firstName);
+    this.removeErrorGuests('#secondPart .content .error-guests');
     $(".tableName").append("<p><span class='name'>" + lastName + " " + firstName + "</span><span class='delete'></span></p>");
     $("input#lastname, input#firstname").val("");
 }
@@ -46,6 +63,9 @@ AnswerForm.prototype.logUser = function(website, login, password) {
     // Set the id and password of the guest object
     website.guest.id = login;
     website.guest.password = password;
+
+    // Disable the button after the click
+    $("#log").prop("disabled", "true");
 
     // Display the waiting GIF
     $('#login-wrapper').animate({opacity: 0}, 400, "swing", () => {
@@ -70,6 +90,7 @@ AnswerForm.prototype.logUser = function(website, login, password) {
                 $('#waiting').animate({opacity: 0}, 400, "swing", function() {
                     $(this).css({display: 'none'});
                     $('#login-wrapper').css({display: 'block'});
+                    $("#log").removeProp("disabled");
                     $('#login-wrapper').animate({opacity: 1}, 400, "swing", () => {
                         $('#waiting').remove();
                     });

@@ -550,6 +550,10 @@ section h1 {
     margin-top: 15%;
 }
 
+#reponse .error-guests {
+    color: red;
+}
+
 #hebergement {
     background-image: url('./images/hebergement.jpg');
     background-size: 100%;

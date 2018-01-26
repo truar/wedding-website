@@ -16,8 +16,16 @@ class NodeJsClient {
                 callbackSuccess(website.guest);
             })
             .fail(function(jqXHR, textStatus, errorThrown) {
-                callbackFailure($.parseJSON(jqXHR.responseText));
-            }); 
+                console.log(jqXHR.status);
+                if(jqXHR.status == "403") {
+                    callbackFailure($.parseJSON(jqXHR.responseText));
+                } else {
+                    var data = {};
+                    data.error = "Something wrong happen. Please try again later";
+                    callbackFailure(data);
+                }
+                
+            });
     }
 
     putGuest(guest, callbackSuccess, callbackFailure) {
@@ -31,8 +39,8 @@ class NodeJsClient {
             .done(function(data) {
                 callbackSuccess(data);
             })
-            .fail(function(data) {
-                callbackFailure(data);
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                callbackFailure(jqXHR.responseText);
             });
     }
 }
