@@ -1,9 +1,9 @@
 function reloadArticleSize() {
     var menuWidth = 90;
     if(screen.width >= 800) {
-        $(".wrapper-content").css({width: screen.width - menuWidth});
+        $(".wrapper-content, .wrapper-title").css({width: screen.width - menuWidth});
     } else {
-         $(".wrapper-content").css({width: screen.width});
+         $(".wrapper-content, .wrapper-title").css({width: screen.width});
     }
 }
 

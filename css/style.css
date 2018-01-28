@@ -88,7 +88,7 @@ nav a {
 }
 
 html body nav ul li a:hover, html body .ui-page-theme-a nav ul li a.selected {
-    color: black;
+    color: rgb(192,192,192);
 }
 
 
@@ -217,10 +217,6 @@ section .slider-nav .bubble {
 
 section .slider-nav .bubble-selected, section .slider-nav .bubble:hover {
     background-image: url('./images/icons/bubble-selected.png');
-    width: 30px;
-    height: 30px;
-    margin-left: 5px;
-    margin-right: 5px;
 }
 
 section h1 {
@@ -266,14 +262,15 @@ section h1 {
     background-color: black;
     color: white;
     width: 50%;
+    font-size: 0.9em;
 }
 
 #profile #logged {
     display: none;
 }
 
-#profile .error-login {
-    color: red;
+#profile .error-login, #reponse article .content p.error-guests {
+    color: rgb(234,86,43);
     font-size: 1.2em;
 }
 
@@ -285,7 +282,7 @@ section h1 {
     background-position: center center;
 }
 
-.wrapper-content {
+.wrapper-content, .wrapper-title {
     width: 1350px;
     margin-left: 90px;
 }
@@ -298,7 +295,7 @@ section h1 {
     position: relative;
     margin: auto;
     margin-top: 13%;
-    width: 58%;
+    width: 65%;
     height: 50%;
     padding: 1%;
     background-color: rgba(127,127,127,0.4);
@@ -388,11 +385,11 @@ section h1 {
 #reponse {
     background-image: url('./images/invitation.jpg');
     background-position: center center;
-    color: white;
+    color: black;
 }
 
 #reponse h1 {
-    color: white;
+    color: black;
 }
 
 #reponse form {
@@ -424,6 +421,7 @@ section h1 {
 
 #reponse article .content p {
     text-align: left;
+    font-size: 1.4em;
 }
 
 #reponse div.yesOrNo {
@@ -442,7 +440,7 @@ section h1 {
     border-bottom: 1px solid black;
     background-color: transparent;
     font-size: 1em;
-    color: white;
+    color: black;
 }
 
 #reponse .photo {
@@ -465,13 +463,13 @@ section h1 {
     background-color: rgba(0,0,0,0.5); 
     color: white;
     width: 190px;
-    font-size: 1.3em;
+    font-size: 1.1em;
     padding-top: 10px;
     padding-bottom: 10px;  
 }
 
 #reponse article button[name="addName"] {
-    font-size: 0.85em;
+    font-size: 0.75em;
 }
 
 #reponse article button[type="button"]:hover {
@@ -509,7 +507,8 @@ section h1 {
 }
 
 #reponse #secondPart .tableName span.name {
-    width: 80%;
+    width: 90%;
+    margin-left: 3%;
 }
 
 #reponse #secondPart .delete {
@@ -539,20 +538,21 @@ section h1 {
     background-color: rgba(0,0,0,0.1);
     width: 100%;
     height: 100px;
-    color: white;
+    color: black;
+    font-size: 0.8em;
 }
 
 #reponse #lastPart textarea#allergies {
     margin-bottom: 5%;
 }
 
+#reponse #answer .content {
+    width: 75%;
+}
 #reponse #answer p {
     margin-top: 15%;
 }
 
-#reponse .error-guests {
-    color: red;
-}
 
 #hebergement {
     background-image: url('./images/hebergement.jpg');
@@ -616,7 +616,8 @@ section h1 {
 #sjc .content.left {
     background-color: rgba(0,0,0,0.6);
     border: 1px solid black;
-    padding: 1%;
+    padding-left: 1%;
+    height: 49.5vh;
     width: 35%;
     margin-left: 7%;
 }
@@ -704,10 +705,10 @@ section h1 {
 */
 /* Comment to debug */
 
-nav {
+/*nav {
     left: -350px;
 }
-
+*/
 /* Removing the ugly jquery mobile css effect */ 
 body .ui-page-theme-a a, html body .ui-bar-a a, html body .ui-body-a a, html body ,nav .ui-group-theme-a a {
     color: white;
@@ -715,7 +716,7 @@ body .ui-page-theme-a a, html body .ui-bar-a a, html body .ui-body-a a, html bod
 }
 
 body .ui-page-theme-a a:hover, html body .ui-bar-a a:hover, html body .ui-body-a a:hover, html body nav .ui-group-theme-a a:hover {
-    color: black;
+    color: rgb(192,192,192);
 }
 
 body .ui-overlay-a, body .ui-page-theme-a, body .ui-page-theme-a .ui-panel-wrapper {

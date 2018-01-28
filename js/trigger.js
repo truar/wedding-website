@@ -1,5 +1,17 @@
 var website, slider;
 
+function calculNumberOfDay() {
+    var dateWedding = new Date(2019, 7, 31);
+    var today = Date.now();
+    var numOfDays = Math.round((dateWedding-today)/(1000*60*60*24));
+    var dateDisplay = "J-" + numOfDays;
+    if(numOfDays == 0) {
+        dateDisplay = "JOUR-J";
+    } else if(numOfDays < 0) {
+        dateDisplay = "Mariage terminé";
+    }
+    return dateDisplay;
+}
 function toggleMenu() {
     $("nav").toggleClass("responsive");
 }
@@ -97,7 +109,7 @@ $(document).ready(function() {
     guest = {};
     
     
-    var pages = [new Page("profile", "pages/profile.html"),
+    var pages = [new Page("profile", "pages/profile.html", "", "pages/js/profile.js"),
                  new Page("le-jour-j", "pages/le-jour-j.html", "", "pages/js/le-jour-j.js"),
                  new Page("reponse", "pages/reponse.html", "", "pages/js/reponse.js"),
                  new Page("hebergement", "pages/hebergement.html"),
@@ -118,6 +130,7 @@ $(document).ready(function() {
 
     // Init the trigger
     initTrigger(screen, slider, website, answerForm);
+
     
     website.renderFirst("body div:first", () => determineCurrentSection(website, slider));
 
