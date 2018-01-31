@@ -88,7 +88,7 @@ nav a {
 }
 
 html body nav ul li a:hover, html body .ui-page-theme-a nav ul li a.selected {
-    color: rgb(192,192,192);
+    color: rgb(89,89,89);
 }
 
 
@@ -414,7 +414,7 @@ section h1 {
 
 #reponse article .content {
     position: relative;
-    width: 70%;
+    width: 75%;
     margin: auto;
     height: 540px;
 }
@@ -442,6 +442,9 @@ section h1 {
     font-size: 1em;
     color: black;
 }
+#reponse #guestName {
+    width: 75%;
+}
 
 #reponse .photo {
     margin-bottom: 5%;
@@ -462,10 +465,11 @@ section h1 {
     border: 1px solid black;
     background-color: rgba(0,0,0,0.5); 
     color: white;
-    width: 190px;
+    width: 170px;
     font-size: 1.1em;
-    padding-top: 10px;
-    padding-bottom: 10px;  
+    padding-top: 7px;
+    padding-bottom: 7px;  
+    border-radius: 10px;
 }
 
 #reponse article button[name="addName"] {
@@ -476,18 +480,12 @@ section h1 {
     background-color: rgba(0,0,0,0.7); 
 }
 
-#reponse #secondPart .inputName, #reponse #secondPart .tableName {
-    float: left;
-    width: 40%;
-    margin-bottom: 5%;
-}
-
 #reponse #secondPart .inputName input[type="button"] {
     font-size: 0.8em;
 }
 
-#reponse #secondPart .inputName p {
-    margin-bottom: 5%;
+#reponse #secondPart .inputName {
+    margin-bottom: 2%;
 }
 
 #reponse #secondPart .inputName p.add {
@@ -496,10 +494,13 @@ section h1 {
 
 #reponse #secondPart .tableName {
     border: 1px solid black;
-    margin-left: 10%;
     padding: 1%;
     font-size: 0.7em;
-    height: 370px;
+    width: 50%;
+    height: 150px;
+    background-color: rgb(192,192,192);
+    margin-bottom: 2%;
+    overflow: scroll;
 }
 
 #reponse #secondPart .tableName span {
@@ -523,8 +524,16 @@ section h1 {
     background-image: url('./images/corbeille_ouverte.png');
 }
 
+#reponse #secondPart p.choixHebergement {
+    text-align: center;
+}
+
+#reponse #secondPart p.choixHebergement input {
+    margin-right: 10%;
+}
+
+
 #reponse #secondPart .btn {
-    clear: both;
     margin: auto;
 }
 
@@ -546,11 +555,15 @@ section h1 {
     margin-bottom: 5%;
 }
 
-#reponse #answer .content {
+#reponse .answer .content {
     width: 75%;
 }
-#reponse #answer p {
+#reponse .answer p {
     margin-top: 15%;
+}
+
+#reponse #answerNo {
+    display: none;
 }
 
 
@@ -716,7 +729,7 @@ body .ui-page-theme-a a, html body .ui-bar-a a, html body .ui-body-a a, html bod
 }
 
 body .ui-page-theme-a a:hover, html body .ui-bar-a a:hover, html body .ui-body-a a:hover, html body nav .ui-group-theme-a a:hover {
-    color: rgb(192,192,192);
+    color: rgb(89,89,89);
 }
 
 body .ui-overlay-a, body .ui-page-theme-a, body .ui-page-theme-a .ui-panel-wrapper {

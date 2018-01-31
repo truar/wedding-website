@@ -7,7 +7,7 @@
                 <div class="content">
                     <div class="yesOrNo">
                         <p>Serez-vous disponible le jour J ?</p>
-                        <p class="yesOrNo"><label for="yesanswer">Oui</label> <input name="yesOrNo" id="yesanswer" type="radio" value="yes" checked/> <label for="no">Non</label> <input name="yesOrNo" id="no" type="radio" value="no" /></p>
+                        <p class="yesOrNo"><label for="yesanswer">Oui</label> <input name="yesOrNo" id="yesanswer" type="radio" value="yes" checked/> <label for="noanswer">Non</label> <input name="yesOrNo" id="noanswer" type="radio" value="no" /></p>
                     </div>
                     <div class="photo">
                         <p>Les photos seront mises à disposition sur le site après le mariage<br/>Si vous souhaitez être averti, merci d’indiquer votre adresse mail</p>
@@ -20,20 +20,34 @@
             </article>
             <article id="secondPart">
                 <div class="content">
-                    <div class="inputName">
-                        <p>Invit&eacute;s pr&eacute;sents :</p>
-                        <p><input type="text" name="lastname" id="lastname" placeholder="Nom*" /></p>
-                        <p><input type="text" name="firstname" id="firstname" placeholder="Pr&eacute;nom*" /></p>
-                        <p class="add"><button type="button"name="addName">Ajouter</button></p>
+                    <div class="guests">    
+                        <div class="inputName">
+                            <p>Merci d’indiquer ci-dessous le nom et pr&eacute;nom des invit&eacute;s pr&eacute;sents :</p>
+                            <p><input type="text" name="guestName" id="guestName" placeholder="Nom Pr&eacute;nom" /> <button type="button"name="addName">Ajouter</button></p>
+                        </div>
+                        <div class="tableName">
+                        </div>
                     </div>
-                    <div class="tableName">
+                    <div class="hebergement">
+                        <p>Selon les disponibilit&eacute;s, avez-vous une pr&eacute;f&eacute;rence pour l’h&eacute;bergement ?</p>
+                        <p class="choixHebergement">
+                            <label for="chalet">Chalet</label> <input name="hebergement" id="chalet" type="radio" value="chalet" />
+                            <label for="tente">Tente</label> <input name="hebergement" id="tente" type="radio" value="tente" />
+                            <label for="gite">G&icirc;te</label> <input name="hebergement" id="gite" type="radio" value="gite" />
+                            <label for="autre">Autre</label> <input name="hebergement" id="autre" type="radio" value="autre" />
+                        </p>
                     </div>
                 </div>
                 <div class="btn">
                     <button type="button" name="previousSecond" class="previous">Pr&eacute;c&eacute;dent</button>
                     <button type="button" name="next" class="next">Suivant</button>  
                 </div>
-            </article>   
+            </article>  
+            <article id="answerNo" class="answer">
+                <div class="content">
+                    <p>Merci d’avoir répondu à l’invitation.<br/>Nous sommes tristes de ne pas vous compter parmis nous</p>
+                </div>
+            </article>
             <article id="lastPart">
                 <div class="content">
                     <p>Si vous suivez un r&eacute;gime alimentaire particulier ou si vous avez des intol&eacute;rances/allergies, merci de nous le pr&eacute;ciser ci-dessous :</p>
@@ -45,9 +59,10 @@
                     <button type="button" name="previousLast" class="previous">Pr&eacute;c&eacute;dent</button>
                     <button type="button" name="send" class="next">Envoyer</button>
             </article>
-            <article id="answer">
+            <article id="answer" class="answer">
                 <div class="content">
                     <p>Merci d’avoir répondu à l’invitation.<br/>En cas de changements ou de problèmes, n’hésitez pas à nous contacter<br/>Rendez-vous le 31 Août...</p>
+                </div>
             </article>
         </div>
     </form>

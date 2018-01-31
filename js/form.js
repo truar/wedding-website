@@ -3,19 +3,50 @@ function AnswerForm(nodeJsClient, slider) {
     this.slider = slider;
 }
 
-AnswerForm.prototype.validateFirstPart = function(guest, isPresent, email) {
-    if(isPresent === "yes") {
-        guest.answer.disponibility = 1;
-    }
-    guest.answer.email = email;
+AnswerForm.prototype.moveSlider = function() {
     $("div.slider-form").animate({left: "-=" + this.slider.screen.width}, 400);
 }
 
-AnswerForm.prototype.validateSecondPart = function(guest) {
+AnswerForm.prototype.putForm = function(guest, callbackSuccess, callbackError) {
+    console.log(JSON.stringify(guest));
+
+    this.nodeJsClient.putGuest(guest, () => callbackSuccess(), () => callbackError());
+}
+
+AnswerForm.prototype.toggleFirstButtonValue = function(value) {
+    if (value === 'yes') {
+        $("button[name=continue]").html("Continuer");
+    }
+    else if (value === 'no') {
+        $("button[name=continue]").html("Envoyer");
+    }
+}
+
+AnswerForm.prototype.validateFirstPart = function(guest, isPresent, email) {
+    guest.answer.email = email;
+
+    if(isPresent === "yes") {
+        guest.answer.disponibility = 1;
+        this.moveSlider();
+    } else {
+        guest.answer.disponibility = 0;
+        $("#answerNo").css({display: 'block'});
+        $("#secondPart, #lastPart, #answer").remove();
+        
+        this.putForm(guest, 
+            () => this.moveSlider(), 
+            () => this.displayErrorGuests('#firstPart .content', "Something wrong happened. Please try again later or contact us")
+        );
+    }
+    
+}
+
+AnswerForm.prototype.validateSecondPart = function(guest, hebergement) {
+    guest.answer.hebergement = hebergement;
     if(guest.answer.guests.length === 0) {
         this.displayErrorGuests('#secondPart .content', "Veuillez renseigner au moins un invit&eacute;");
     } else {
-        $("div.slider-form").animate({left: "-=" + this.slider.screen.width}, 400);
+        this.moveSlider();
     }
 }
 
@@ -36,21 +67,18 @@ AnswerForm.prototype.validateLastPart = function(guest, allergies, comments) {
     
     console.log(JSON.stringify(guest));
 
-    this.nodeJsClient.putGuest(guest, 
-        () => {
-            $("div.slider-form").animate({left: "-=" + this.slider.screen.width}, 400);
-        }, () => {
-            this.displayErrorGuests('#lastPart .content', "Something wrong happened. Please try again later or contact us");
-        }
+    this.putForm(guest, 
+        () => this.moveSlider(), 
+        () => this.displayErrorGuests('#lastPart .content', "Something wrong happened. Please try again later or contact us")
     );
     
 }
 
-AnswerForm.prototype.addName = function(guest, lastName, firstName) {
-    guest.answer.guests.push(lastName + " " + firstName);
+AnswerForm.prototype.addName = function(guest, guestName) {
+    guest.answer.guests.push(guestName);
     this.removeErrorGuests('#secondPart .content .error-guests');
-    $(".tableName").append("<p><span class='name'>" + lastName + " " + firstName + "</span><span class='delete'></span></p>");
-    $("input#lastname, input#firstname").val("");
+    $(".tableName").append("<p><span class='name'>" + guestName + "</span><span class='delete'></span></p>");
+    $("input#guestName").val("");
 }
 
 AnswerForm.prototype.removeName = function(guest, name) {

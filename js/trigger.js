@@ -92,12 +92,14 @@ function initTrigger(screen, slider, website, answerForm) {
     // Listener on the scroll event  
     addScrollEvent(website, slider);
     
-    // Trigger on form buttons to validate the different part of the form
+    $("body").on("change", "input[type=radio][name=yesOrNo]", function() {
+        answerForm.toggleFirstButtonValue(this.value);
+    });
     $("body").on("click", "#firstPart button.next", () => answerForm.validateFirstPart(website.guest, $("input[name='yesOrNo']:checked").val(), $("input[name='email']").val()));
-    $("body").on("click", "#secondPart button.next", () => answerForm.validateSecondPart(website.guest));
+    $("body").on("click", "#secondPart button.next", () => answerForm.validateSecondPart(website.guest, $("input[name='hebergement']:checked").val()));
     $("body").on("click", ".previous", () => $("div.slider-form").animate({left: "+=" + slider.screen.width}, 400));
     $("body").on("click", "button[name='send']", () => answerForm.validateLastPart(website.guest, $("textarea[name='allergies']").val(), $("textarea[name='comments']").val()));
-    $("body").on("click", "button[name='addName']", () => answerForm.addName(website.guest, $("input[name='lastname']").val(), $("input[name='firstname']").val()));
+    $("body").on("click", "button[name='addName']", () => answerForm.addName(website.guest, $("input[name='guestName']").val()));
     $("body").on("click", ".tableName span.delete", (event) => answerForm.removeName(website.guest, $(event.target).parent().find("span.name").html()));
 }
 
@@ -130,9 +132,10 @@ $(document).ready(function() {
 
     // Init the trigger
     initTrigger(screen, slider, website, answerForm);
-
     
-    website.renderFirst("body div:first", () => determineCurrentSection(website, slider));
-
+    website.renderFirst("body div:first", () => {
+        determineCurrentSection(website, slider);
+        answerForm.logUser(website, "1", "ruaro");
+    });
 });
 
