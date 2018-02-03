@@ -11,6 +11,8 @@ guest.answer.email = "thibault.ruaro@gmail.com";
 guest.answer.date = Date.now;
 guest.answer.message = "je fais passer un message";
 guest.answer.allergies = "Je suis allergique à la viande";
+guest.answer.hasAnswered = true;
+guest.answer.hebergement = "chalet";
 
 var nodeJsClient = new NodeJsClient();
 nodeJsClient.putGuest(guest, () => console.log("[PUT GUEST] Success"), () => console.log("[PUT GUEST] Failure"));

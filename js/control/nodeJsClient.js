@@ -30,6 +30,7 @@ class NodeJsClient {
 
     putGuest(guest, callbackSuccess, callbackFailure) {
         guest.answer.date = Date.now();
+        guest.answer.hasAnswered = true;
         $.ajax({
             method: "PUT",
             dataType: "json",

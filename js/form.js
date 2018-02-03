@@ -26,10 +26,10 @@ AnswerForm.prototype.validateFirstPart = function(guest, isPresent, email) {
     guest.answer.email = email;
 
     if(isPresent === "yes") {
-        guest.answer.disponibility = 1;
+        guest.answer.isAvailable = true;
         this.moveSlider();
     } else {
-        guest.answer.disponibility = 0;
+        guest.answer.isAvailable = false;
         $("#answerNo").css({display: 'block'});
         $("#secondPart, #lastPart, #answer").remove();
         

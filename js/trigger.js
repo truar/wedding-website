@@ -135,7 +135,7 @@ $(document).ready(function() {
     
     website.renderFirst("body div:first", () => {
         determineCurrentSection(website, slider);
-        answerForm.logUser(website, "1", "ruaro");
+        answerForm.logUser(website, "2", "poitevin");
     });
 });
 

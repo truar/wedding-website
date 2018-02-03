@@ -469,7 +469,7 @@ section h1 {
     font-size: 1.1em;
     padding-top: 7px;
     padding-bottom: 7px;  
-    border-radius: 10px;
+    border-radius: 3px;
 }
 
 #reponse article button[name="addName"] {
