@@ -48,7 +48,9 @@ function initTrigger(screen, slider, website, answerForm) {
         });
     });
     
+    
     $('body').on("click", "#log", () => answerForm.logUser(website, $('#username').val(), $('#password').val()));
+    $('body').on("click", "#logout", () => answerForm.logoutUser(website));
         
     $('body').on("click", ".bubble", function() {
         moveSlider(slider, $(this).index());
@@ -110,7 +112,6 @@ $(document).ready(function() {
     nodeJsClient = new NodeJsClient();
     guest = {};
     
-    
     var pages = [new Page("profile", "pages/profile.html", "", "pages/js/profile.js"),
                  new Page("le-jour-j", "pages/le-jour-j.html", "", "pages/js/le-jour-j.js"),
                  new Page("reponse", "pages/reponse.html", "", "pages/js/reponse.js"),
@@ -122,12 +123,14 @@ $(document).ready(function() {
     screen = new Screen(
         $(document).width(),
         $(window).height()
-    )
+    );
 
     slider = new Slider(7, 0, 0, screen);    
-    
-    website = new Website(pages.length, 1, 0, screen, pages, guest);
-    
+
+    cookieMgr = new CookieMgr();
+
+    website = new Website(pages.length, 1, 0, screen, pages, guest, cookieMgr);
+
     answerForm = new AnswerForm(nodeJsClient, slider);
 
     // Init the trigger
@@ -135,7 +138,9 @@ $(document).ready(function() {
     
     website.renderFirst("body div:first", () => {
         determineCurrentSection(website, slider);
-        answerForm.logUser(website, "2", "poitevin");
+        if(website.cookieMgr.load(website) === true) {
+            answerForm.logUser(website, website.guest.id, website.guest.password);
+        }
     });
 });
 

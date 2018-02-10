@@ -8,6 +8,7 @@ class Screen {
 class Slider {
     constructor(count, currentIndex, left, creen) {
         this.count = count;
+        this.countInit = count;
         this.currentIndex = currentIndex;
         this.left = left;
         this.screen = screen;
@@ -30,6 +31,10 @@ class Slider {
         // delete the bubble in excess
         var toDelete = this.count - 1;
         $(".bubble:gt(" + toDelete + ")").remove();
+    }
+
+    reInit() {
+        this.count = this.countInit;
     }
 }
 

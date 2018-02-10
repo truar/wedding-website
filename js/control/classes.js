@@ -1,13 +1,14 @@
 /* Need JQUERY to work */
 
 class Website {
-    constructor(numberSection, currentSection, pageCurrentSection, screen, pages, guest) {
+    constructor(numberSection, currentSection, pageCurrentSection, screen, pages, guest, cookieMgr) {
         this.numberSection = numberSection;
         this.currentSection = currentSection;
         this.pageCurrentSection = pageCurrentSection;
         this.screen = screen;
         this.pages = pages;
         this.guest = guest;
+        this.cookieMgr = cookieMgr;
     }
 
     renderFirst(whereToRender, callback) {
@@ -36,6 +37,13 @@ class Website {
         // Insert the content after the last rendered
         $("#" + lastRendered.id).after("<section id="+this.pages[toRender].id+"></section>");
         this.pages[toRender].render(callback);
+    }
+
+    reInit() {
+        for(var i = 1; i < this.numberSection; i++) {
+            this.pages[i].isRendered = false;
+            $("#" + this.pages[i].id).remove();
+        }
     }
 }
 

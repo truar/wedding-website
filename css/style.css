@@ -461,7 +461,7 @@ section h1 {
     text-align: center; 
 }
 
-#reponse article button[type="button"], #reponse article input[type="button"] {
+#reponse article button[type="button"], #reponse article input[type="button"], #photo button{
     border: 1px solid black;
     background-color: rgba(0,0,0,0.5); 
     color: white;
@@ -498,8 +498,9 @@ section h1 {
     font-size: 0.7em;
     width: 50%;
     height: 150px;
-    background-color: rgb(192,192,192);
+    background-color: rgba(0,0,0,0.1);
     margin-bottom: 2%;
+    color: black;
     overflow: scroll;
 }
 
@@ -619,6 +620,64 @@ section h1 {
 
 #photo {
     background-image: url('./images/photo.jpg');
+    background-size: 105%;
+    background-position: right top;
+}
+
+#photo .content {
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+#photo button, #photo input[type=file] {
+    font-size: 0.7em;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  #photo .btn {
+    /* border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;*/
+    border: 1px solid black;
+    background-color: rgba(0,0,0,0.5); 
+    color: white;
+    padding-top: 7px;
+    padding-bottom: 7px;  
+    border-radius: 3px;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+#photo #uploadPhoto p.inputs {
+    text-align: left;
+}
+
+#photo span.little {
+    font-style: italic;
+    font-size: 0.7em;
+}
+
+#photo #downloadPhoto {
+    margin-top: 5%;
+    right: 2%;
+    width: 50%;
+    position: absolute;
 }
 
 #sjc {
@@ -675,7 +734,7 @@ section h1 {
     font-size: 250%;
 }
 
-#contact .content p span, #sjc .content-wrapper .content p {
+#photo .content p, #contact .content p span, #sjc .content-wrapper .content p {
     font-family: calibri;
 }
 
@@ -718,10 +777,10 @@ section h1 {
 */
 /* Comment to debug */
 
-/*nav {
+nav {
     left: -350px;
 }
-*/
+
 /* Removing the ugly jquery mobile css effect */ 
 body .ui-page-theme-a a, html body .ui-bar-a a, html body .ui-body-a a, html body ,nav .ui-group-theme-a a {
     color: white;

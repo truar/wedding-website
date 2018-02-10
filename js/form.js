@@ -103,12 +103,15 @@ AnswerForm.prototype.logUser = function(website, login, password) {
         // As soon as we have the answer, we put the information
         this.nodeJsClient.login(website,
             function(guest) {
+                // Create the cookie to save the logged guest
+                website.cookieMgr.create(guest);
                 $('#waiting').animate({opacity: 0}, 400, "swing", function() {
                     $(this).css({display: 'none'});
                     $('#logged').css({display: "block", opacity: 0}).animate({opacity: 1}, "400", "swing");
                     $('p.displayName').text(website.guest.displayName);
                     $('nav').addClass('ready');
                     $('section').css({display: "block"});
+                    $('#waiting').remove();
                 });
             },
             function(data) {
@@ -125,5 +128,20 @@ AnswerForm.prototype.logUser = function(website, login, password) {
                 });
             }
         );
+    });
+}
+
+AnswerForm.prototype.logoutUser = function(website) {
+    website.cookieMgr.delete();
+    // Reload the website in the initial state
+    // Display the waiting GIF
+    $('#logged').animate({opacity: 0}, 400, "swing", () => {
+        $("#logged").css({display: 'none'});
+        website.reInit();
+        this.slider.reInit();
+        $('nav').removeClass('ready');
+        $("#log").removeProp("disabled");
+        $('#login-wrapper').css({display: 'block'}).animate({opacity: 1}, 400, "swing");
+        $("#username, #password").val("");
     });
 }
